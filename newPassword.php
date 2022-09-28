@@ -21,9 +21,8 @@ if (session_status() == PHP_SESSION_NONE)
 <header class="button-header">
 	<div class="button-div">
 		<a href="welcome.php"><button class="button-head">Accueil</button></a>
-		<a href="recherche.php"><button class="button-head">Recherche</button></a>
 		<a href="newPassword.php"><button class="button-head">Nouveau</button></a>
-		<a href="info.php"><button class="button-head">Informations</button></a>
+		<a href="infoAction.php"><button class="button-head">Informations</button></a>
 		<a href="logoutAction.php"><button class="button-head">Déconnexion</button></a>
 	</div>
   <h1>Passrapa</h1>
@@ -88,7 +87,7 @@ if (session_status() == PHP_SESSION_NONE)
             {
           ?>
 
-          <option value=<?php $directory['id']; ?> ><?php echo $directory['lib']; ?></option>
+          <option value="<?php echo $directory['id']; ?>" ><?php echo $directory['lib']; ?></option>
 
           <?php
             }

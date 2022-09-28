@@ -37,7 +37,7 @@ if($user != '')
 	else
 	{
 		$_SESSION['erreur'] = "Mot de passe incorrect";
-		include('index.php');
+		include('index.html');
 	}
 	
 }
@@ -45,7 +45,7 @@ if($user != '')
 else
 {
 	$_SESSION['erreur'] = "Adresse mail non reconnue, veuillez vérifier votre saisie ou vous inscrire";
-	include('index.php');
+	include('index.html');
 }
 
 ?>

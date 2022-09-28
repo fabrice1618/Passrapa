@@ -93,7 +93,7 @@
   <div class ="form_validation">
       <div class="form-inscription">
         <button type="submit">M'inscrire</button>
-        <button><a href="index.php">J'ai déjà un compte</a></button>
+        <a href="index.html"><button type="button">J'ai déjà un compte</button></a>
       </div>
       <br/>
     </div>

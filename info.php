@@ -1,44 +1,42 @@
-<?php
-
-// On ramène le fichier config.php
-include('config.php');
-
-if (session_status() == PHP_SESSION_NONE)
-{
-	// On commence la session
-  session_start();
-}
-
-?>
-
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Pico project" />
+  <meta name="author" content="" />
   <title>Informations - Passrapa</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="assets/site.webmanifest">
 </head>
 <header class="button-header">
 	<div class="button-div">
 		<a href="welcome.php"><button class="button-head">Accueil</button></a>
-		<a href="recherche.php"><button class="button-head">Recherche</button></a>
 		<a href="newPassword.php"><button class="button-head">Nouveau</button></a>
-		<a href="info.php"><button class="button-head">Informations</button></a>
+		<a href="infoAction.php"><button class="button-head">Informations</button></a>
 		<a href="logoutAction.php"><button class="button-head">Déconnexion</button></a>
 	</div>
   <h1>Passrapa</h1>
   <h2>Informations du compte</h2>
 </header>
 <body>
+  <!-- Ramener les variables sessions autrement - JS // Controller ? -->
 	<?php
-    $lastname = $_SESSION['nom'];
-    $firstname = $_SESSION['prenom'];
-    $birth = $_SESSION['naissance'];
-		$phone = $_SESSION['telephone'];
-		$mail = $_SESSION['mail'];
+    // On récupère les infos de l'utilisateur
+    $sql = "SELECT utilisateur.nom, utilisateur.prenom, utilisateur.naissance, utilisateur.mail, utilisateur.telephone FROM utilisateur WHERE utilisateur.id = ".$_SESSION['id'];
+    $query = $dbh->query($sql);
+    $user = $query->fetch();
+
+    // On injecte les valeurs à la sessions
+    $lastname = $user['nom'];
+    $firstname = $user['prenom'];
+    $birth = $user['naissance'];
+    $phone = $user['telephone'];
+    $mail = $user['mail'];
   ?>
  <br/>
 	<div class="div_erreur">
+    <!-- JS // Controller - Erreurs -->
 	  <?php
 	  	if(isset($_SESSION['erreur']))
 	  	{

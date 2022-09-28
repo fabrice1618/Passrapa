@@ -32,7 +32,7 @@ $mdp_peppered = hash_hmac("sha256", $mdp, $pepper);
 $mdp_hashed = password_hash($mdp_peppered, PASSWORD_DEFAULT);
 
 // On injecte les valeurs à la base
-if($directory != '')
+if(!empty($directory))
 {
   $sql = "INSERT INTO mdp" . " (username, mdp, urlsite, lib, favoris, utilisateur_id, directory_id, commentaire) VALUES ('" . $username ."', '" . $mdp_hashed ."', '" . $urlsite ."', '" . $lib ."', '" . $favoris ."', '" . $_SESSION['id'] ."', '" . $directory ."', '" . $commentaire ."')";
 }

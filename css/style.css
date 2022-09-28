@@ -31,7 +31,6 @@ body {
                         url("../assets/background.png");
     background-size: cover;
     width: auto;
-    height: 100%;
     margin: auto;
     padding: auto;
     color: white;
@@ -102,28 +101,44 @@ a:hover {
 
 .body_center {
     text-align: center;
+    margin: 2% auto 5% auto;
 }
 
 .body_login {
     height: 320px;
     text-align: center;
-    margin: 100px auto auto auto;
+    margin: 5% auto 5% auto;
     padding: auto;
 }
 
 .body_welcome {
-    height: 320px;
     text-align: center;
-    margin: 100px auto 70px auto;
+    margin: 2% auto 5% auto;
     padding: auto;
 }
 
 .body_recherche {
-    height: 320px;
     text-align: center;
-    margin: 100px auto 70px auto;
+    margin: auto;
     padding: auto;
 }
+
+.body_mdp {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto 2% 5% 2%;
+}
+
+.body_mdp_flex {
+    flex: 1 1 100%;
+    flex-direction: row wrap;
+    min-width: 45%;
+    max-width: 45%;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    padding: auto;
+}
+
 .div_erreur {
     text-align: center;
 }

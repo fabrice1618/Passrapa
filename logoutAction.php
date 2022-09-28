@@ -9,6 +9,6 @@ session_start();
 // On termine la session pour oublier les variables
 session_destroy();
 
-include ("index.php");
+include ("index.html");
 
 ?>
